@@ -1,0 +1,22 @@
+{
+  "name": "notes_web_app",
+  "version": "1.0.0",
+  "description": "My first web application using node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdelrahman-kamall/notes_web_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abdelrahman-kamall/notes_web_app/issues"
+  },
+  "homepage": "https://github.com/Abdelrahman-kamall/notes_web_app#readme",
+  "dependencies": {
+    "yargs": "^15.3.1"
+  }
+}
