@@ -9,11 +9,25 @@ const fs = require("fs")
  */
 const add_note = function(title,body,file_name){
         const notes =get_notes(file_name)
-        notes.push({
-            title: title,
-            body: body
-        })
-        save_notes(notes,file_name)
+        var flag = true
+        for(i=0;i<notes.length;i++){
+
+            if(notes[i].title === title){
+                flag = false
+                console.log("This title already exists, please choose another title ")
+                break
+            }
+
+        }
+        if(flag){
+
+            notes.push({
+                title: title,
+                body: body
+            })
+            save_notes(notes,file_name)
+
+        }
 
 }
 /**
