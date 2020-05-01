@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Abdelrahman-kamall/notes_web_app#readme",
   "dependencies": {
+    "chalk": "^4.0.0",
     "yargs": "^15.3.1"
   }
 }
