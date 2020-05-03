@@ -8,7 +8,8 @@ const chalk = require("chalk")
  * @param {*} body  the body of the new note 
  * @param {*} file_name the file name of the file of notes
  */
-const add_note = function(title,body,file_name){
+const add_note = (title,body,file_name) =>{
+    //we could use filter also but wanted to test another way
         const notes =get_notes(file_name)
         var flag = true
         for(i=0;i<notes.length;i++){
@@ -39,7 +40,7 @@ const add_note = function(title,body,file_name){
  * or not created it returns empty array
  * @param {*} file_name the file name of the file of notes
  */
-const get_notes = function(file_name){
+const get_notes = (file_name) =>{
     try{
         const buffer = fs.readFileSync(file_name)
         const notes = buffer.toString()
@@ -53,12 +54,9 @@ const get_notes = function(file_name){
  * @param {*} notes the json array of objects
  * @param {*} file_name the file name of the file of notes
  */
-const save_notes = function(notes,file_name){
-    const notes_string = JSON.stringify(notes)
-    fs.writeFileSync(file_name,notes_string)
+const save_notes = (notes,file_name)=> fs.writeFileSync(file_name,JSON.stringify(notes))
 
-}
-const remove_note = function(title,file_name){
+const remove_note = (title,file_name)=>{
     var notes = get_notes(file_name)
 
     //method1
@@ -78,14 +76,10 @@ const remove_note = function(title,file_name){
     }
     /*method 2
      const len =notes.length
-     notes = notes.filter(function(curr_note){
-        if(curr_note.title === title){
-            return false
-        }else{
-            return true
-        }
+     notes = notes.filter( (curr_note) => !(curr_note.title === title))
+        
 
-    })
+    
     if(len === notes.length){
         console.log("no such title exist")
     }else{
