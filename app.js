@@ -42,4 +42,31 @@ yargs.command({
     }
 
 })
+
+yargs.command({
+    command:"list",
+    describe:"list the titles of all stored notes",
+    handler(argv){
+        console.log(chalk.blue("listing all notes"))
+        notes.list_notes("notes_file.json")
+    }
+})
+
+yargs.command({
+    command:"read",
+    describe:"gets the body of the note",
+    handler(argv){
+        console.log(chalk.blue("reading note with title " + argv.title))
+        notes.readNote(argv.title,"notes_file.json")
+    },
+    builder:{
+        title:{
+            describe:"title of the node to be read",
+            type:"string",
+            demandOption:true
+        }
+    }
+
+})
+
 yargs.parse()

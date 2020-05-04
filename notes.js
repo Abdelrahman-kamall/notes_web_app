@@ -89,8 +89,32 @@ const remove_note = (title,file_name)=>{
     
     
 }
+
+const list_notes = file_name=>{
+    console.log(chalk.black.bold("your notes"))
+    const notes = get_notes(file_name)
+    notes.forEach(note => {
+        console.log(chalk.green(note.title))
+    });
+}
+
+const readNote = (title ,file_name) =>{
+    const notes = get_notes(file_name)
+    const note =notes.find(note => note.title ===title)
+    if(!note){
+        console.log(chalk.red.inverse("there is no such title"))
+    }else{
+        console.log("title is : "+chalk.black.italic(title))
+        console.log("body is : "+ chalk.green.inverse(note.body))
+    }
+    
+}
+
+
 module.exports = {
     add_note:add_note,
-    get_notes:get_notes,
-    remove_note:remove_note
+    readNote:readNote,
+    remove_note:remove_note,
+    list_notes:list_notes
+
 }
