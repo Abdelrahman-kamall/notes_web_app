@@ -1,5 +1,7 @@
 # notes_web_app
-My first web application using node.js 
+My first  application using node.js 
+# main goal
+learn the basics of Node.js
 # about the app 
 it enables the user to use command line interface to interact with the application
 the user can add/remove/list/read notes using these command lines
